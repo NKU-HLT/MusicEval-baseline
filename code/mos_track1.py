@@ -40,7 +40,6 @@ class MosPredictor(nn.Module):
         hidden1_2 = self.overall_mlp_layer2(hidden1)
         out1 = self.overall_mlp_layer3(hidden1_2)
         hidden2 = self.textual_mlp_layer1(combine_embed)
-        hidden2 = self.textual_mlp_layer1(combine_embed)
         hidden2_2 = self.textual_mlp_layer2(hidden2)
         out2 = self.textual_mlp_layer3(hidden2_2)
         return out1, out2
@@ -106,7 +105,7 @@ def main():
     DATA_DIR = args.datadir
     UPSTREAM_MODEL = 'CLAP-music'
     EXP_NAME = args.expname
-    CKPT_DIR = '../track1_ckpt/' + EXP_NAME # checkpoint will be save here
+    CKPT_DIR = '../track1_ckpt/' + EXP_NAME # checkpoint will be saved here
    
     if not os.path.exists(CKPT_DIR):
         os.system('mkdir -p ' + CKPT_DIR)    
